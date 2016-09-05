@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Console.UI.Views.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Console.UI.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" 
+             d:DesignWidth="300"
+             DataContext="{Binding Settings, Source={StaticResource Locator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="Black">
+            <TextBlock Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <Run Foreground="DodgerBlue" FontWeight="Bold" FontSize="25" FontFamily="Segoe UI">Settings</Run>
+                <Run Foreground="Gray" FontSize="25" FontFamily="Segoe UI">&amp;</Run>
+                <Run Foreground="White" FontSize="25" FontFamily="Segoe UI">Maintenance</Run>
+            </TextBlock>
+        </Border>
+        <TabControl Grid.Row="1" ItemContainerStyle="{StaticResource CustomTabItem}" TabStripPlacement="Left">
+            <TabItem Header="Tab 1"/>
+            <TabItem Header="Tab 2"/>
+            <TabItem Header="Tab 3"/>
+        </TabControl>  
+    </Grid>
+</UserControl>
