@@ -12,6 +12,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="91*"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="679*"/>
             <RowDefinition Height="193*"/>
         </Grid.RowDefinitions>
@@ -29,28 +30,23 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="{StaticResource DarkGraySolidColorBrush}"/>
-            <Button Grid.Row="0" Grid.Column="0" Style="{StaticResource DelphaxLogoButton}" Height="25" Margin="2"/>
-            <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource ElanLogoButton}" Height="25" Margin="2" HorizontalAlignment="Right"/>
-            <Border Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0" Background="Black"/>
-            <ProgressBar Grid.Row="1" 
-                             Grid.ColumnSpan="3" 
-                             Grid.Column="0" 
-                             Style="{StaticResource MarqueeProgressBarStyle}"
-                             IsIndeterminate="True" 
-                             Background="#FF3EB4FF" 
-                             BorderBrush="#FF3EB4FF"
-                             Foreground="#FF3EB4FF"
-                             Height="5"/>
+            <Border Grid.Column="0" Grid.ColumnSpan="3" Background="{StaticResource DarkGraySolidColorBrush}"/>
+            <Button Grid.Column="0" Style="{StaticResource DelphaxLogoButton}" Height="25" Margin="2"/>
+            <Button Grid.Column="2" Style="{StaticResource ElanLogoButton}" Height="25" Margin="2" HorizontalAlignment="Right"/>
         </Grid>
 
         <!-- Bottom grid (footer) for consumables and time -->
         <Grid Grid.Row="3" Margin="0,0,0,0.5">
         </Grid>
+        
         <views:JobQueueView Grid.Row="1"  />
+        <Border Grid.Row="2" Background="Transparent"/>
+        <ProgressBar Grid.Row="2" 
+                     Style="{StaticResource MarqueeProgressBarStyle}"
+                     IsIndeterminate="True" 
+                     Background="#FF3EB4FF" 
+                     BorderBrush="#FF3EB4FF"
+                     Foreground="#FF3EB4FF"
+                     Height="5"/>
     </Grid>
 </Window>

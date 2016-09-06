@@ -23,6 +23,11 @@
 
     <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
 
+    <LinearGradientBrush x:Key="OrangeLinearGradientBrush" EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+        <GradientStop Color="#FFFD8F0C" Offset="0.739"/>
+        <GradientStop Color="#FF955202"/>
+    </LinearGradientBrush>
+
     <!-- Border Brushes -->
 
     <LinearGradientBrush x:Key="NormalRepeatButtonBorderBrush" StartPoint="0,0" EndPoint="0,1">
