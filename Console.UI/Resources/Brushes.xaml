@@ -1,6 +1,5 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:Console.UI.Resources">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <SolidColorBrush x:Key="DarkGraySolidColorBrush" Color="#FF3D3D3D"/>
 
@@ -20,6 +19,8 @@
     <SolidColorBrush x:Key="NormalRepeatButtonBrush" Color="#FFCCCCCC"/>
 
     <SolidColorBrush x:Key="PressedRepeatButtonBrush" Color="#FFEEEEEE"/>
+
+    <SolidColorBrush x:Key="HighlightSolidColorBrush" Color="#FF3EB4FF"/>
 
     <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
 
