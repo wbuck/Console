@@ -5,17 +5,19 @@
              StartupUri="Views/MainWindow.xaml" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              d1p1:Ignorable="d" 
-             xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006">
-  <Application.Resources>
-    <ResourceDictionary>
-      <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:Console.UI.ViewModel" />
-        <ResourceDictionary.MergedDictionaries>
-            <ResourceDictionary Source="Resources/Brushes.xaml"/>
-            <ResourceDictionary Source="Resources/TabControl.xaml"/>
+             xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:con="clr-namespace:Console.UI.Converters">
+    <Application.Resources>
+        <ResourceDictionary>
+            <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:Console.UI.ViewModel" />
+            <con:BrushToColorConverter x:Key="BrushToColorConverter"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Brushes.xaml"/>
+                <ResourceDictionary Source="Resources/TabControl.xaml"/>
                 <ResourceDictionary Source="Resources/Buttons.xaml"/>
                 <ResourceDictionary Source="Resources/JobQueueListBox.xaml"/>
-            <ResourceDictionary Source="Resources/ProgressBar.xaml"/>
-        </ResourceDictionary.MergedDictionaries>
-    </ResourceDictionary>
-  </Application.Resources>
+                <ResourceDictionary Source="Resources/ProgressBar.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>
