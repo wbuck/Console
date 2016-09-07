@@ -24,6 +24,30 @@
 
     <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
 
+    <LinearGradientBrush x:Key="BlackLinearGradientBorderBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#777" Offset="0.0"/>
+                <GradientStop Color="#000" Offset="1.0"/>
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+
+    <LinearGradientBrush x:Key="BlackReversedLinearGradientBrush" EndPoint="1.047,1.05" StartPoint="0,0">
+        <LinearGradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#FFAFAFAF" Offset="0.872"/>
+                <GradientStop Color="#000" Offset="0.366"/>
+            </GradientStopCollection>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="BlackLinearGradientBrush" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#FF4A4A4A" Offset="0"/>
+        <GradientStop Color="Black" Offset="0.808"/>
+    </LinearGradientBrush>
+
     <LinearGradientBrush x:Key="OrangeLinearGradientBrush" EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
         <GradientStop Color="#FFFD8F0C" Offset="0.739"/>
         <GradientStop Color="#FF955202"/>

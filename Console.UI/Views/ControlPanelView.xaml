@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Console.UI.Views"
+             xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
              mc:Ignorable="d" 
              d:DesignHeight="300" Width="680">
     <Grid>
@@ -18,9 +19,72 @@
         <Button Grid.Column="0" Width="80" Style="{StaticResource ControlPanelButtonStyle}" Margin="5,10,5,10" BorderBrush="{StaticResource HighlightSolidColorBrush}" BorderThickness="0.8"/>
         <Button Grid.Column="1" Width="80" Style="{StaticResource ControlPanelButtonStyle}" Margin="5,10,5,10" BorderBrush="{StaticResource HighlightSolidColorBrush}" BorderThickness="0.8"/>
         <Button Grid.Column="2" Width="80" Style="{StaticResource ControlPanelButtonStyle}" Margin="5,10,5,10" BorderBrush="{StaticResource HighlightSolidColorBrush}" BorderThickness="0.8"/>
-        <Button Grid.Column="3" Width="80" Style="{StaticResource ControlPanelButtonStyle}" Margin="5,10,5,10" BorderBrush="Yellow" BorderThickness="0.8"/>
-        <Button Grid.Column="4" Width="80" Style="{StaticResource ControlPanelButtonStyle}" Margin="5,10,5,10" BorderBrush="LimeGreen" BorderThickness="0.8"/>
-        <Button Grid.Column="5" Width="80" Style="{StaticResource ControlPanelButtonStyle}" Margin="5,10,5,10" BorderBrush="Red" BorderThickness="0.8"/>
-          
+        
+        <!-- Clear track button -->
+        <Button Grid.Column="3" 
+                Width="80" 
+                Height="80" 
+                Style="{StaticResource ControlPanelButtonStyle}" 
+                Margin="5,10,5,10"
+                BorderBrush="{StaticResource HighlightSolidColorBrush}" 
+                BorderThickness="0.8">
+            <ed:BlockArrow Fill="#FFFFB400" Height="35" Orientation="Up" StrokeThickness="0.8" VerticalAlignment="Bottom" Width="30">
+                <ed:BlockArrow.Stroke>
+                    <LinearGradientBrush EndPoint="1.337,0.545" StartPoint="-0.482,0.038">
+                            <GradientStop Color="Black" Offset="0.292"/>
+                            <GradientStop Color="#FF6A6A6A" Offset="0.716"/>
+                            <GradientStop Color="Black" Offset="0.473"/>
+                        </LinearGradientBrush>
+                    </ed:BlockArrow.Stroke>
+            </ed:BlockArrow>
+            
+        </Button>
+        
+        <!-- Start button -->
+        <Button Grid.Column="4" 
+                Width="80" 
+                Height="80"
+                BorderBrush="{StaticResource HighlightSolidColorBrush}"
+                Style="{StaticResource ControlPanelButtonStyle}" 
+                Margin="5,10,5,10" 
+                BorderThickness="0.8">
+            <Path Data="M 0 0 L 8 16 L 0 32 Z" Margin="3,0,0,0" Stretch="Fill" HorizontalAlignment="Center" Fill="#FF387200" Width="25.876" Height="33">
+                <Path.Stroke>
+                    <LinearGradientBrush EndPoint="0.735,0.923" StartPoint="-0.007,-0.054">
+                        <GradientStop Color="Black" Offset="0.673"/>
+                        <GradientStop Color="#FF6A6A6A" Offset="0.827"/>
+                    </LinearGradientBrush>
+                </Path.Stroke>
+            </Path>
+
+        </Button>
+        
+        <!-- Stop button -->
+        <Button Grid.Column="5" 
+                Width="80" 
+                Height="80" 
+                BorderBrush="{StaticResource HighlightSolidColorBrush}"
+                Style="{StaticResource ControlPanelButtonStyle}" 
+                Margin="5,10,5,10"
+                BorderThickness="0.8">
+            <Rectangle Height="30"
+                       Width="30" 
+                       StrokeThickness="0.8"
+                       Fill="#FF740000">
+                <Rectangle.Stroke>
+                    <LinearGradientBrush EndPoint="1.047,1.05" StartPoint="0,0">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStopCollection>
+                                <GradientStop Color="#FF4E4E4E" Offset="0.637"/>
+                                <GradientStop Color="#000" Offset="0.349"/>
+                            </GradientStopCollection>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Rectangle.Stroke>
+            </Rectangle>
+        </Button>
+
+
+
     </Grid>
 </UserControl>

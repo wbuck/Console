@@ -52,7 +52,8 @@
     
     <Style x:Key="ControlPanelButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-        <Setter Property="Background" Value="{StaticResource DarkGraySolidColorBrush}"/>
+        <Setter Property="Background" Value="{StaticResource BlackLinearGradientBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BlackLinearGradientBorderBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Stylus.IsPressAndHoldEnabled" Value="False"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>

@@ -19,7 +19,7 @@
         </Grid.RowDefinitions>
 
         <views:JobQueueView Grid.Row="1"  />
-        <Border Grid.Row="2" Background="Transparent"/>
+        <Border Grid.Row="2" Background="Black" BorderBrush="Transparent" BorderThickness="0"/>
         <ProgressBar Grid.Row="2" 
                      Style="{StaticResource MarqueeProgressBarStyle}"
                      IsIndeterminate="True" 
@@ -29,7 +29,10 @@
                      Height="5"/>
 
         <!-- Main working area -->
-        <ContentControl Grid.Row="2"/>
+        <!--<ContentControl Grid.Row="2"/>-->
+        
+        <!-- Only here for testing purposes -->
+        <!--<views:SettingsView Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></views:SettingsView>-->
         
         <!-- Action bar, contains ink level view and controls view -->
         <Grid Grid.Row="4" Background="Black">
