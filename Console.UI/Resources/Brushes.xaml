@@ -24,13 +24,13 @@
 
     <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
 
-    <LinearGradientBrush x:Key="BlackLinearGradientBorderBrush" StartPoint="0,0" EndPoint="0,1">
-        <GradientBrush.GradientStops>
+    <LinearGradientBrush x:Key="RectangleLinearGradientBorderBrush" EndPoint="1.047,1.05" StartPoint="0,0">
+        <LinearGradientBrush.GradientStops>
             <GradientStopCollection>
-                <GradientStop Color="#777" Offset="0.0"/>
-                <GradientStop Color="#000" Offset="1.0"/>
+                <GradientStop Color="#FF4E4E4E" Offset="0.637"/>
+                <GradientStop Color="#000" Offset="0.349"/>
             </GradientStopCollection>
-        </GradientBrush.GradientStops>
+        </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
 
 
