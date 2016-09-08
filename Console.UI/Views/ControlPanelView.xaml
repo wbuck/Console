@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Console.UI.Views"
              xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
              mc:Ignorable="d" 
-             d:DesignHeight="300" Width="680">
+             Width="680">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
