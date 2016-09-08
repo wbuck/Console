@@ -93,6 +93,12 @@
     <Compile Include="Views\JobQueueItemView.xaml.cs">
       <DependentUpon>JobQueueItemView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PrinterStateView.xaml.cs">
+      <DependentUpon>PrinterStateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrinterStatusView.xaml.cs">
+      <DependentUpon>PrinterStatusView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
@@ -151,6 +157,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\JobQueueItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PrinterStateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PrinterStatusView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

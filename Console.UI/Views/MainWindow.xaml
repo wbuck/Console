@@ -9,33 +9,59 @@
         Title="MainWindow" Height="1024" Width="1280"
         DataContext="{Binding Main, Source={StaticResource Locator}}" WindowState="Maximized">
     <Grid ShowGridLines="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1096*"/>
+            <ColumnDefinition Width="179*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="91*"/>
+            <RowDefinition Height="98*"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="679*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="655*"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="32*"/>
+            <RowDefinition Height="34*"/>
         </Grid.RowDefinitions>
 
-        <views:JobQueueView Grid.Row="1"  />
-        <Border Grid.Row="2" Background="Black" BorderBrush="Transparent" BorderThickness="0"/>
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Grid.ColumnSpan="3" Background="{StaticResource DarkGraySolidColorBrush}"/>
+            <Button Grid.Column="0" Style="{StaticResource DelphaxLogoButton}" Height="25" Margin="2"/>
+            <Button Grid.Column="2" Style="{StaticResource ElanLogoButton}" Height="25" Margin="2" HorizontalAlignment="Right"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Background="Black" Grid.ColumnSpan="2" Grid.Column="0"
+              d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <views:JobQueueView Grid.Column="0"/>
+
+        </Grid>
+        <views:PrinterStateView Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Panel.ZIndex="2" Margin="0,10,0,0" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
+        <Border Grid.Row="2" Background="Black" BorderBrush="Transparent" BorderThickness="0" Grid.ColumnSpan="2"
+                Grid.Column="0" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
         <ProgressBar Grid.Row="2" 
                      Style="{StaticResource MarqueeProgressBarStyle}"
-                     IsIndeterminate="True" 
+                     IsIndeterminate="False" 
                      Background="#FF3EB4FF" 
                      BorderBrush="#FF3EB4FF"
-                     Foreground="#FF3EB4FF"
-                     Height="5"/>
+                     Foreground="#FF3EB4FF" Grid.ColumnSpan="2" Grid.Column="0" Margin="0,-0.001" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
 
         <!-- Main working area -->
         <!--<ContentControl Grid.Row="2"/>-->
-        
+
         <!-- Only here for testing purposes -->
-        <!--<views:SettingsView Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></views:SettingsView>-->
-        
+        <!--<views:SettingsView Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></views:SettingsView>-->
+
         <!-- Action bar, contains ink level view and controls view -->
-        <Grid Grid.Row="4" Background="Black">
+        <Grid Grid.Row="5" Background="Black" Grid.ColumnSpan="2" Grid.Column="0"
+              d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2.5*"/>
@@ -47,7 +73,7 @@
                     CornerRadius="0,0,8,8" 
                     HorizontalAlignment="Center"
                     BorderBrush="{StaticResource HighlightSolidColorBrush}"
-                    BorderThickness="0.8">
+                    BorderThickness="0.8,0,0.8,0.8">
                 <views:ControlPanelView HorizontalAlignment="Right"/>
             </Border>
             <Button Grid.Column="2" 
@@ -58,9 +84,10 @@
                     BorderBrush="Red"
                     Margin="0,0,5,0"/>
         </Grid>
-        
+
         <!-- Footer -->
-        <Grid Grid.Row="5" Background="{StaticResource DarkGraySolidColorBrush}">
+        <Grid Grid.Row="6" Background="{StaticResource DarkGraySolidColorBrush}" Grid.ColumnSpan="2" Grid.Column="0"
+              d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -73,16 +100,7 @@
             <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="0:0:0" Foreground="White" VerticalAlignment="Center" FontWeight="Bold" FontSize="20"/>
         </Grid>
 
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Border Grid.Column="0" Grid.ColumnSpan="3" Background="{StaticResource DarkGraySolidColorBrush}"/>
-            <Button Grid.Column="0" Style="{StaticResource DelphaxLogoButton}" Height="25" Margin="2"/>
-            <Button Grid.Column="2" Style="{StaticResource ElanLogoButton}" Height="25" Margin="2" HorizontalAlignment="Right"/>
-        </Grid>
+
 
     </Grid>
 </Window>
