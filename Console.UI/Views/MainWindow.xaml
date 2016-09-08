@@ -48,16 +48,20 @@
                 Grid.Column="0" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
         <ProgressBar Grid.Row="2" 
                      Style="{StaticResource MarqueeProgressBarStyle}"
-                     IsIndeterminate="False" 
+                     IsIndeterminate="True" 
                      Background="#FF3EB4FF" 
                      BorderBrush="#FF3EB4FF"
-                     Foreground="#FF3EB4FF" Grid.ColumnSpan="2" Grid.Column="0" Margin="0,-0.001" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+                     Foreground="#FF3EB4FF" 
+                     Grid.ColumnSpan="2" 
+                     Grid.Column="0" 
+                     Margin="0,-0.001"/>
 
         <!-- Main working area -->
         <!--<ContentControl Grid.Row="2"/>-->
 
         <!-- Only here for testing purposes -->
         <!--<views:SettingsView Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></views:SettingsView>-->
+        <views:PrinterStatusView Grid.Column="0" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="2"></views:PrinterStatusView>
 
         <!-- Action bar, contains ink level view and controls view -->
         <Grid Grid.Row="5" Background="Black" Grid.ColumnSpan="2" Grid.Column="0"

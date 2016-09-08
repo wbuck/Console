@@ -16,6 +16,57 @@
         </VisualBrush.Visual>
     </VisualBrush>
 
+
+
+    <LinearGradientBrush x:Key="PrinterLinearGradientBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF8C8C8C" Offset="1"/>
+        <GradientStop Color="White"/>
+    </LinearGradientBrush>
+
+    <VisualBrush x:Key="PrinterPicture" 
+                 ViewboxUnits="RelativeToBoundingBox"
+                 ViewportUnits="RelativeToBoundingBox">
+        <VisualBrush.Visual>
+            <Grid>
+                <Viewbox Stretch="Uniform">
+                    <Grid Background="Transparent" Width="500" Height="160" VerticalAlignment="Top">
+                        <Rectangle Fill="Gray" Height="6"   VerticalAlignment="Bottom" Margin="28,0,22,12"/>
+                        <Rectangle Grid.Row="0" Fill="Gray" Height="6"   VerticalAlignment="Bottom" Margin="28,0,22,20"/>
+                        <Border Grid.Row="0" BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Left" Margin="28,33,0,26" Width="85"/>
+                        <Border Grid.Row="0" BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Right" Margin="0,33,22,26" Width="86"/>
+                        <Border Grid.Row="0" BorderBrush="Gray" BorderThickness="1,1,0,1" HorizontalAlignment="Right" Margin="0,33,108,26" Width="85"/>
+                        <Border Grid.Row="0" HorizontalAlignment="Left" Margin="114,46,0,26" BorderBrush="Gray" BorderThickness="1,1,0,1" Width="48"/>
+                        <Border Grid.Row="0" HorizontalAlignment="Left" Margin="162,46,0,26" BorderBrush="Gray" BorderThickness="1,1,0,1" Width="49"/>
+                        <Border Grid.Row="0" Margin="211,46,241,26" BorderBrush="Gray" BorderThickness="1,1,0,1"/>
+                        <Border Grid.Row="0" Margin="0,46,194,26" BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Right" Width="47"/>
+                        <Rectangle Grid.Row="0" Fill="Gray" RadiusX="2" RadiusY="2" HorizontalAlignment="Left" Margin="209.5,56.5,0,71.917" Stroke="Gray" Width="4"/>
+                        <Border Grid.Row="0" Margin="114,16,194,0" BorderBrush="Gray" BorderThickness="0,0,0,2" Background="#FF5FC8FF" Height="29" VerticalAlignment="Top" />
+                        <Border Grid.Row="0" Margin="140,16,218,0" CornerRadius="0,0,2,2" BorderBrush="Gray" Background="Gray" BorderThickness="1" Height="22" VerticalAlignment="Top"/>
+                        <Border Grid.Row="0" HorizontalAlignment="Left" 
+                            Margin="28,16,0,0" 
+                            BorderBrush="{StaticResource PrinterLinearGradientBrush}" 
+                            BorderThickness="1,1,1,0"
+                            Width="85"
+                            Background="{StaticResource PrinterLinearGradientBrush}" Height="17" VerticalAlignment="Top"/>
+
+                        <Border Grid.Row="0" 
+                            HorizontalAlignment="Right" 
+                            Margin="0,16,22,0" 
+                            BorderThickness="1,1,1,0" 
+                            Width="171" 
+                            Background="{StaticResource PrinterLinearGradientBrush}"
+                            BorderBrush="{StaticResource PrinterLinearGradientBrush}"
+                            Height="17" 
+                            VerticalAlignment="Top"/>
+                        <Border Grid.Row="0" Background="Gray" HorizontalAlignment="Left" Height="6" CornerRadius="2,0,0,0" Margin="40,10,0,0" VerticalAlignment="Top" Width="73"/>
+                        <Rectangle Grid.Row="0" Fill="Gray" RadiusX="2" RadiusY="2" HorizontalAlignment="Left" Margin="98.25,56.5,0,71.917" Stroke="Gray" Width="4"/>
+                        <Rectangle Grid.Row="0" Fill="Gray" RadiusX="2" RadiusY="2" HorizontalAlignment="Right" Margin="0,56.125,105.375,72.292" Stroke="Gray" Width="4"/>
+                    </Grid>
+                </Viewbox>
+            </Grid>
+        </VisualBrush.Visual>
+    </VisualBrush>
+
     <SolidColorBrush x:Key="NormalRepeatButtonBrush" Color="#FFCCCCCC"/>
 
     <SolidColorBrush x:Key="PressedRepeatButtonBrush" Color="#FFEEEEEE"/>
