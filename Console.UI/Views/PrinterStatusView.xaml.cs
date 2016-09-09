@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Console.UI.Views
 {
@@ -23,6 +11,18 @@ namespace Console.UI.Views
         public PrinterStatusView( )
         {
             InitializeComponent( );
+        }
+
+        // Prevents the Windows boundry feedback.
+        // When a scroll viewer or list box (or anything that scrolls)  
+        // are touch manipulated at their boundry the
+        // entire windows will move to signal to
+        // the user that they have reached the 
+        // boundry. Setting this to true prevents
+        // that from happening.
+        private void UIElement_OnManipulationBoundaryFeedback( object sender, ManipulationBoundaryFeedbackEventArgs e )
+        {
+            e.Handled = true;
         }
     }
 }

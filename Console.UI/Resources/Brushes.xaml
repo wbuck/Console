@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing">
 
     <SolidColorBrush x:Key="DarkGraySolidColorBrush" Color="#FF3D3D3D"/>
 
@@ -16,10 +17,6 @@
         </VisualBrush.Visual>
     </VisualBrush>
     
-    
-
-
-
     <LinearGradientBrush x:Key="PrinterLinearGradientBrush" EndPoint="0.5,1" StartPoint="0.5,0">
         <GradientStop Color="#FF8C8C8C" Offset="1"/>
         <GradientStop Color="White"/>
@@ -116,6 +113,53 @@
             </GradientStopCollection>
         </GradientBrush.GradientStops>
     </LinearGradientBrush>
+    
+    <VisualBrush x:Key="SelectedJobIconVisualBrush">
+        <VisualBrush.Visual>
+            <Viewbox Width="25" Height="30">
+                <Grid HorizontalAlignment="Right" Width="25" Height="30" VerticalAlignment="Top">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Path Data="M0.5,0.5 L30.625,0.5 L30.625,38.309 L0.5,38.309 z" Grid.Row="0" Grid.RowSpan="3" StrokeThickness="3" Stretch="Fill" Stroke="{StaticResource HighlightSolidColorBrush}" Margin="0,0,4.833,4.083"/>
+                    <Path Data="M28.708333,28.809 L4.7083333,28.809"  Grid.Row="1" Stretch="Fill" Stroke="{StaticResource HighlightSolidColorBrush}" StrokeThickness="3" Margin="-0.291,4.589,3.624,0.791"/>
+                    <Path Grid.Row="0" Data="M28.708333,28.809 L4.7083333,28.809" Stretch="Fill" Stroke="{StaticResource HighlightSolidColorBrush}" StrokeThickness="3" VerticalAlignment="Top" Margin="0,7.15,3.917,-0.353"/>
+                    <Ellipse Margin="4.126,-1.236,3.5,3.581" Grid.Row="1" Fill="White" StrokeThickness="2" Grid.RowSpan="2"/>
+                    <ed:Arc ArcThickness="20" 
+                        ArcThicknessUnit="Pixel"
+                        EndAngle="360" 
+                        Margin="3.708,-1.668,3.209,3.07"  
+                        Stroke="LimeGreen" 
+                        StrokeThickness="2" 
+                        StartAngle="0" 
+                        Grid.Row="1"
+                        Grid.RowSpan="2"/>
+                    <Path Panel.ZIndex="5" Data="M5.9045495,0.3125 L8.3105594,1.8125 2.9366669,12.375 -4.3131805,8.5625 -2.7693438,6.1622757 1.5612331,8.6248446 z" Fill="Black" Margin="7.418,2.749,7.332,-2.39" Stretch="Fill" Grid.Row="1"/>
+
+                </Grid>
+            </Viewbox>
+        </VisualBrush.Visual>
+    </VisualBrush>
+    
+    <VisualBrush x:Key="ExclamationVisualBrush">
+        <VisualBrush.Visual>
+            <Grid>
+                <Rectangle Fill="{StaticResource HighlightSolidColorBrush}"
+                           Height="30" 
+                           Width="11" 
+                           StrokeThickness="0.8" 
+                           VerticalAlignment="Bottom" 
+                           Margin="0,0,0,12"/>
+                <Rectangle Fill="{StaticResource HighlightSolidColorBrush}" 
+                           Height="8" 
+                           Width="11" 
+                           StrokeThickness="0.8" 
+                           VerticalAlignment="Bottom"/>
+            </Grid>
+        </VisualBrush.Visual>
+    </VisualBrush>
 
     <VisualBrush x:Key="QueueIconVisualBrush">
         <VisualBrush.Visual>

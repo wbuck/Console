@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:Console.UI.Views"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1500">
-    <Grid Background="Black">
+    <Grid Background="Black"
+          ManipulationBoundaryFeedback="UIElement_OnManipulationBoundaryFeedback">
         <Grid.RowDefinitions>
             <RowDefinition Height="203*"/>
             <RowDefinition Height="97*"/>
@@ -24,17 +25,9 @@
                 BorderThickness="0.8">
             <Canvas Background="{StaticResource PrinterPicture}"/>
         </Border>
-        <!--<Border Grid.Column="1" Grid.Row="0" Background="{StaticResource PrinterPicture}"/>-->
         <Border Grid.Column="0" 
                 Grid.Row="0"  
-                BorderThickness="0.8" 
-                BorderBrush="{StaticResource HighlightSolidColorBrush}"
-                CornerRadius="2" 
-                Margin="5"
-                Background="White"/>
-
-        <Border Grid.Column="0" 
-                Grid.Row="1" 
+                Grid.RowSpan="2"
                 BorderThickness="0.8" 
                 BorderBrush="{StaticResource HighlightSolidColorBrush}"
                 CornerRadius="2" 
@@ -49,14 +42,201 @@
                 Background="White">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="266*"/>
-                    <ColumnDefinition Width="239*"/>
+                    <ColumnDefinition Width="0.8*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="0.8*"/>
+                    <ColumnDefinition Width="4*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Border Grid.Column="0"
+                
+                <!-- Current job section -->
+                <Border Grid.Row="0" 
+                        Grid.Column="0"
+                        Grid.RowSpan="2"
+                        Background="{StaticResource DarkGraySolidColorBrush}"
+                        Margin="5,5,0,5"
+                        CornerRadius="2,0,0,2"
+                        Panel.ZIndex="1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Canvas Grid.Row="0"
+                                VerticalAlignment="Center" 
+                                HorizontalAlignment="Center" 
+                                Height="45" 
+                                Width="40" 
+                                Background="{StaticResource SelectedJobIconVisualBrush}"/>
+                    </Grid>
+                    
+                </Border>
+
+                <Border Grid.Row="0" 
+                        Grid.Column="1" 
+                        Grid.RowSpan="2" 
+                        CornerRadius="2"
+                        Margin="0,5,5,5"
+                        Background="#FFC7C5C5">
+                    <ScrollViewer PanningMode="VerticalOnly">
+                        <Grid ShowGridLines="False">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" 
+                                       Grid.Row="0" 
+                                       Text="Selected Job" 
+                                       HorizontalAlignment="Left" 
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Foreground="Black"
+                                       Margin="8,0,0,0"/>
+                            <TextBlock Grid.Column="0" Grid.Row="1"
+                                       Text="Job ID :"
+                                       Margin="8,0,0,0"
+                                       FontWeight="Bold"
+                                       Foreground="{StaticResource DarkGraySolidColorBrush}"/>
+                            <TextBlock Grid.Column="0" Grid.Row="2"
+                                       Text="Document :"
+                                       Margin="8,0,0,0"
+                                       FontWeight="Bold"
+                                       Foreground="{StaticResource DarkGraySolidColorBrush}"/>
+                            <TextBlock Grid.Column="0" Grid.Row="3"
+                                       Text="Media :"
+                                       Margin="8,0,0,0"
+                                       FontWeight="Bold"
+                                       Foreground="{StaticResource DarkGraySolidColorBrush}"/>
+                            <TextBlock Grid.Column="0" Grid.Row="4"
+                                       Text="Sheet Ranges | Printed :"
+                                       Margin="8,0,0,0"
+                                       FontWeight="Bold"
+                                       Foreground="{StaticResource DarkGraySolidColorBrush}"/>
+                            <TextBlock Grid.Column="0" Grid.Row="5"
+                                       Text="State :"
+                                       Margin="8,0,0,0"
+                                       FontWeight="Bold"
+                                       Foreground="{StaticResource DarkGraySolidColorBrush}"/>
+                            <TextBlock Grid.Column="0" Grid.Row="6"
+                                       Text="Copies | Printed :"
+                                       Margin="8,0,0,0"
+                                       FontWeight="Bold"
+                                       Foreground="{StaticResource DarkGraySolidColorBrush}"/>
+                            <TextBlock Grid.Column="0" Grid.Row="7"
+                                       Text="Speed :"
+                                       Margin="8,0,0,0"
+                                       FontWeight="Bold"
+                                       Foreground="{StaticResource DarkGraySolidColorBrush}"/>
+                            <TextBlock Grid.Column="0" Grid.Row="8"
+                                       Text="Quality :"
+                                       Margin="8,0,0,0"
+                                       FontWeight="Bold"
+                                       Foreground="{StaticResource DarkGraySolidColorBrush}"/>
+                            <TextBlock Grid.Column="0" Grid.Row="9"
+                                       Text="Mode :"
+                                       Margin="8,0,0,0"
+                                       FontWeight="Bold"
+                                       Foreground="{StaticResource DarkGraySolidColorBrush}"/>
+                            <TextBlock Grid.Column="0" Grid.Row="10"
+                                       Text="Orientation :"
+                                       Margin="8,0,0,0"
+                                       FontWeight="Bold"
+                                       Foreground="{StaticResource DarkGraySolidColorBrush}"/>
+                        </Grid>
+                    </ScrollViewer>
+                </Border>
+
+                <!-- Print queue section -->
+                <Border Grid.Row="0" 
+                        Grid.Column="2"
+                        Background="{StaticResource DarkGraySolidColorBrush}"
+                        Margin="5,5,0,5"
+                        CornerRadius="2,0,0,2"
+                        Panel.ZIndex="1">
+                    <Canvas VerticalAlignment="Center" 
+                            HorizontalAlignment="Center" 
+                            Height="40" 
+                            Width="45" 
+                            Background="{StaticResource QueueIconVisualBrush}"/>
+                </Border>
+                <Border Grid.Row="0" 
+                        Grid.Column="3" 
+                        CornerRadius="2"
+                        Margin="0,5,5,5"
+                        Background="#FFC7C5C5">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" 
+                                   Grid.Row="0" 
+                                   Text="Print Queue" 
+                                   HorizontalAlignment="Left" 
+                                   FontSize="18"
+                                   FontWeight="Bold"
+                                   Foreground="Black"
+                                   Margin="8,0,0,0"/>
+                        <StackPanel Grid.Column="0" Grid.Row="1">
+                        <TextBlock Text="Jobs In Queue :"
+                                   Margin="8,0,0,0"
+                                   FontWeight="Bold"
+                                   Foreground="{StaticResource DarkGraySolidColorBrush}"/>
+                            <TextBlock Grid.Column="0" Grid.Row="2"
+                                   Text="Jobs On Hold :"
+                                   Margin="8,0,0,0"
+                                   FontWeight="Bold"
+                                   Foreground="{StaticResource DarkGraySolidColorBrush}"/>
+                        </StackPanel>
+                        
+                    </Grid>
+                </Border>
+
+                <!-- Notifications section -->
+                <Border Grid.Row="1" 
+                        Grid.Column="2"
+                        Background="{StaticResource DarkGraySolidColorBrush}"
+                        Margin="5,5,0,5"
+                        CornerRadius="2,0,0,2"
+                        Panel.ZIndex="1">
+                    <Canvas VerticalAlignment="Center" 
+                            HorizontalAlignment="Center" 
+                            Height="35" 
+                            Width="10"  
+                            Background="{StaticResource ExclamationVisualBrush}"/>
+                </Border>
+                <Border Grid.Row="1" 
+                        Grid.Column="2" 
+                        Grid.ColumnSpan="2"
+                        CornerRadius="2"
+                        Margin="5"
+                        Background="#FFC7C5C5">
+
+                </Border>
+
+                <!--<Border Grid.Column="1"
                         Grid.Row="0"
                         Background="#FFC7C5C5"
                         BorderThickness="0.8"
@@ -72,7 +252,7 @@
                                     Background="{StaticResource DarkGraySolidColorBrush}"
                                     Width="80"
                                     CornerRadius="2,0,0,2">
-                                <Canvas Grid.Row="0"
+                                <Canvas
                                     VerticalAlignment="Center" 
                                     HorizontalAlignment="Center" 
                                     Height="30" 
@@ -82,7 +262,7 @@
                         </Grid>
                     </Border>
                 </Border>
-                <Border Grid.Column="0"
+                <Border Grid.Column="1"
                         Grid.Row="1"
                         Background="#FFC7C5C5"
                         BorderThickness="0.8"
@@ -98,16 +278,42 @@
                                     Background="{StaticResource DarkGraySolidColorBrush}"
                                     Width="80"
                                     CornerRadius="2,0,0,2">
-                                <Canvas Grid.Row="0"
-                                    VerticalAlignment="Center" 
-                                    HorizontalAlignment="Center" 
-                                    Height="30" 
-                                    Width="40" 
-                                    Background="{StaticResource QueueIconVisualBrush}"/>
+                                <Canvas VerticalAlignment="Center" 
+                                        HorizontalAlignment="Center" 
+                                        Height="35" 
+                                        Width="10" 
+                                        Background="{StaticResource ExclamationVisualBrush}"/>
                             </Border>
                         </Grid>
                     </Border>
                 </Border>
+                <Border Grid.Column="0"
+                        Grid.Row="0"
+                        Grid.RowSpan="2"
+                        Background="#FFC7C5C5"
+                        BorderThickness="0.8"
+                        CornerRadius="2"
+                        Margin="5" >
+                    <Border>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Row="0"
+                                    Background="{StaticResource DarkGraySolidColorBrush}"
+                                    Width="80"
+                                    CornerRadius="2,0,0,2">
+                                <Canvas
+                                    VerticalAlignment="Center" 
+                                    HorizontalAlignment="Center" 
+                                    Height="45" 
+                                    Width="40" 
+                                    Background="{StaticResource SelectedJobIconVisualBrush}"/>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </Border>-->
 
             </Grid>
         </Border>
