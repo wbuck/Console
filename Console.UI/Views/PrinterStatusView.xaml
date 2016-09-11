@@ -32,7 +32,32 @@
                 BorderBrush="{StaticResource HighlightSolidColorBrush}"
                 CornerRadius="2" 
                 Margin="5"
-                Background="White"/>
+                Background="White">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0"
+                        CornerRadius="2,2,0,0"
+                        Margin="5,5,5,0"
+                        Background="{StaticResource DarkGraySolidColorBrush}">
+                    <TextBlock Text="Print Preview"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               FontSize="25"
+                               FontWeight="Bold"
+                               Foreground="{StaticResource HighlightSolidColorBrush}"
+                               Margin="15"/>
+                </Border>
+                <Border Grid.Row="1"
+                        CornerRadius="0,0,2,2"
+                        Margin="5,0,5,5"
+                        Background="#FFC7C5C5">
+                
+                </Border>
+            </Grid>
+        </Border>
         <Border Grid.Column="1" 
                 Grid.Row="1" 
                 BorderBrush="{StaticResource HighlightSolidColorBrush}"
@@ -81,7 +106,8 @@
                         CornerRadius="2"
                         Margin="0,5,5,5"
                         Background="#FFC7C5C5">
-                    <ScrollViewer PanningMode="VerticalOnly">
+                    <ScrollViewer PanningMode="VerticalOnly" 
+                                  Style="{StaticResource CustomScrollViewer}">
                         <Grid ShowGridLines="False">
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -98,7 +124,7 @@
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
+                                <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" 
@@ -188,7 +214,7 @@
 
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" 
@@ -204,11 +230,20 @@
                                    Margin="8,0,0,0"
                                    FontWeight="Bold"
                                    Foreground="{StaticResource DarkGraySolidColorBrush}"/>
-                            <TextBlock Grid.Column="0" Grid.Row="2"
-                                   Text="Jobs On Hold :"
-                                   Margin="8,0,0,0"
-                                   FontWeight="Bold"
-                                   Foreground="{StaticResource DarkGraySolidColorBrush}"/>
+                            <TextBlock Text="Jobs On Hold :"
+                                       Margin="8,0,0,0"
+                                       FontWeight="Bold"
+                                       Foreground="{StaticResource DarkGraySolidColorBrush}"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Grid.Row="1">
+                            <TextBlock Text="0"
+                                       Margin="8,0,0,0"
+                                       FontWeight="Bold"
+                                       Foreground="{StaticResource DarkGraySolidColorBrush}"/>
+                            <TextBlock Text="0"
+                                       Margin="8,0,0,0"
+                                       FontWeight="Bold"
+                                       Foreground="{StaticResource DarkGraySolidColorBrush}"/>
                         </StackPanel>
                         
                     </Grid>
@@ -228,12 +263,50 @@
                             Background="{StaticResource ExclamationVisualBrush}"/>
                 </Border>
                 <Border Grid.Row="1" 
-                        Grid.Column="2" 
-                        Grid.ColumnSpan="2"
+                        Grid.Column="3" 
                         CornerRadius="2"
-                        Margin="5"
+                        Margin="0,5,5,5"
                         Background="#FFC7C5C5">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
 
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" 
+                                   Grid.Row="0" 
+                                   Text="Notifications" 
+                                   HorizontalAlignment="Left" 
+                                   FontSize="18"
+                                   FontWeight="Bold"
+                                   Foreground="Black"
+                                   Margin="8,0,0,0"/>
+                        <StackPanel Grid.Column="0" Grid.Row="1">
+                            <TextBlock Text="Printer Errors :"
+                                       Margin="8,0,0,0"
+                                       FontWeight="Bold"
+                                       Foreground="{StaticResource DarkGraySolidColorBrush}"/>
+                            <TextBlock Text="Printer Warnings :"
+                                       Margin="8,0,0,0"
+                                       FontWeight="Bold"
+                                       Foreground="{StaticResource DarkGraySolidColorBrush}"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Grid.Row="1">
+                            <TextBlock Text="0"
+                                       Margin="8,0,0,0"
+                                       FontWeight="Bold"
+                                       Foreground="Red"/>
+                            <TextBlock Text="0"
+                                       Margin="8,0,0,0"
+                                       FontWeight="Bold"
+                                       Foreground="#FFCB8914"/>
+                        </StackPanel>
+
+                    </Grid>
                 </Border>
 
                 <!--<Border Grid.Column="1"

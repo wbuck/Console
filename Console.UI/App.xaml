@@ -17,6 +17,7 @@
                 <ResourceDictionary Source="Resources/Buttons.xaml"/>
                 <ResourceDictionary Source="Resources/JobQueueListBox.xaml"/>
                 <ResourceDictionary Source="Resources/ProgressBar.xaml"/>
+                <ResourceDictionary Source="Resources/ScrollViewer.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

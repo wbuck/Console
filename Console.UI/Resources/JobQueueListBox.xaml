@@ -5,7 +5,7 @@
         <ResourceDictionary Source="Brushes.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="ScrollBarPageButton" TargetType="{x:Type RepeatButton}">
+    <Style x:Key="QueueScrollBarPageButton" TargetType="{x:Type RepeatButton}">
 		<Setter Property="SnapsToDevicePixels" Value="True"/>
 		<Setter Property="OverridesDefaultStyle" Value="true"/>
 		<Setter Property="IsTabStop" Value="false"/>
@@ -19,7 +19,7 @@
 		</Setter>
 	</Style>
 
-	<Style x:Key="ScrollBarLineButton" TargetType="{x:Type RepeatButton}">
+	<Style x:Key="QueueScrollBarLineButton" TargetType="{x:Type RepeatButton}">
 		<Setter Property="SnapsToDevicePixels" Value="True"/>
 		<Setter Property="OverridesDefaultStyle" Value="true"/>
 		<Setter Property="Focusable" Value="false"/>
@@ -51,7 +51,7 @@
 		</Setter>
 	</Style>
 
-	<Style x:Key="ScrollBarThumb" TargetType="{x:Type Thumb}">
+	<Style x:Key="QueueScrollBarThumb" TargetType="{x:Type Thumb}">
 		<Setter Property="SnapsToDevicePixels" Value="True"/>
 		<Setter Property="OverridesDefaultStyle" Value="true"/>
 		<Setter Property="IsTabStop" Value="false"/>
@@ -119,14 +119,14 @@
 													<Track x:Name="PART_Track">
 														<Track.DecreaseRepeatButton>
 															<RepeatButton Command="ScrollBar.PageLeftCommand"
-																			Style="{StaticResource ScrollBarPageButton}"/>
+																			Style="{StaticResource QueueScrollBarPageButton}"/>
 														</Track.DecreaseRepeatButton>
 														<Track.IncreaseRepeatButton>
 															<RepeatButton Command="ScrollBar.PageRightCommand"
-																			Style="{StaticResource ScrollBarPageButton}"/>
+																			Style="{StaticResource QueueScrollBarPageButton}"/>
 														</Track.IncreaseRepeatButton>
 														<Track.Thumb>
-															<Thumb Style="{StaticResource ScrollBarThumb}" 
+                                                            <Thumb Style="{StaticResource QueueScrollBarThumb}" 
 																		 Background="Transparent" Opacity="0.8" Margin="0,-1" />
 														</Track.Thumb>
 													</Track>
@@ -146,14 +146,14 @@
 								<ColumnDefinition Width="Auto"/>
 							</Grid.ColumnDefinitions>
 							<RepeatButton x:Name="LineLeftButton" Grid.Column="0" Opacity="0" Visibility="Collapsed"
-										  Style="{StaticResource ScrollBarLineButton}"
+										  Style="{StaticResource QueueScrollBarLineButton}"
 										  Content="M 8 0 L 8 32 L 0 16 Z"       
 										  Command="{x:Static ScrollBar.LineLeftCommand}"       
 										  CommandTarget="{Binding ElementName=scrollviewer}"
 										  MinWidth="40"
 										  ClickMode="Press"/>
 							<RepeatButton x:Name="LineRightButton" Grid.Column="2" Opacity="0" Visibility="Collapsed"
-										  Style="{StaticResource ScrollBarLineButton}"
+										  Style="{StaticResource QueueScrollBarLineButton}"
 										  Content="M 0 0 L 8 16 L 0 32 Z" 
 										  Command="{x:Static ScrollBar.LineRightCommand}"       
 										  CommandTarget="{Binding ElementName=scrollviewer}"
