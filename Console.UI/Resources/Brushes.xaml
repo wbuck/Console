@@ -179,5 +179,63 @@
             </Viewbox>
         </VisualBrush.Visual>
     </VisualBrush>
+    
+    <VisualBrush x:Key="PrintPreviewVisualBrush">
+        <VisualBrush.Visual>
+            <Viewbox>
+                <Grid Height="260" Width="258">
+                    <Path Fill="{StaticResource HighlightSolidColorBrush}" Data="M179.974,219H52.184c-5.276,0-9.184-3.855-9.184-9.131V40.278C43,35.001,46.908,31,52.184,31h95.882   c3.621,1,5.934,4.023,5.934,7.957v1.189v6.824v12.394c0,5.478,4.789,9.635,10.265,9.635h8.783h6.739h1.275   c4.339,0,7.937,3.517,8.937,7.703v11.122c3.29,2.969,6.298,6.241,9,9.761V70.251c0-5.248-1.876-10.222-5.513-14.005l-27.83-29.013   C161.849,23.272,156.576,21,151.08,21H52.184C41.553,21,33,29.647,33,40.278v169.59C33,220.5,41.553,229,52.184,229h127.79   c5.848,0,11.008-2.581,14.478-6.665l-6.704-6.704C185.865,217.719,183.01,219,179.974,219z"/>
+                    <Path Fill="LimeGreen" Data="M234.437,221.833l-41.903-41.902c8.024-10.671,12.785-23.938,12.785-38.318c0-35.246-28.573-63.819-63.82-63.819   c-35.246,0-63.818,28.573-63.818,63.819c0,35.246,28.572,63.818,63.818,63.818c13.652,0,26.294-4.301,36.673-11.603l42.135,42.135   c1.951,1.951,4.508,2.927,7.065,2.927s5.114-0.976,7.065-2.927C238.339,232.062,238.339,225.735,234.437,221.833z M141.499,188.758   c-26.036,0-47.146-21.108-47.146-47.146c0-26.038,21.109-47.146,47.146-47.146c26.038,0,47.147,21.108,47.147,47.146   C188.646,167.65,167.537,188.758,141.499,188.758z"/>
+                    <Path Fill="White" Data="M115,121v8h63.37c-0.961-3-2.234-5-3.785-8H115z"/>
+                    <Path Fill="White" Data="M115,147h65.015c0.282-1,0.431-3.824,0.431-5.793c0-0.741-0.025-1.207-0.066-2.207H115V147z"/>
+                    <Path Fill="White" Data="M115,166h57.059c1.934-3,3.58-5,4.888-8H115V166z"/>
+                </Grid>
+            </Viewbox>
+        </VisualBrush.Visual>
+    </VisualBrush>
+    
+    <VisualBrush x:Key="PowerVisualBrush">
+        <VisualBrush.Visual>
+            <Viewbox Height="160" Width="150">
+                <Grid Height="160" Width="150" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6*"/>
+                    </Grid.RowDefinitions>
+                    <ed:Arc ArcThickness="15" 
+                        ArcThicknessUnit="Pixel" 
+                        StrokeThickness="1"
+                        Grid.Row="1"
+                        Height="150"
+                        Width="150"
+                        StartAngle="40"
+                        EndAngle="320" 
+                        Fill="Red" 
+                        Stretch="Uniform">
+                        <ed:Arc.Stroke>
+                            <LinearGradientBrush EndPoint="1.077,0.944" StartPoint="0.157,-0.077">
+                                <GradientStop Color="Black" Offset="0.239"/>
+                                <GradientStop Color="#FF858282" Offset="0.641"/>
+                            </LinearGradientBrush>
+                        </ed:Arc.Stroke>
+                    </ed:Arc>
+                    <Rectangle Fill="Red" 
+                       HorizontalAlignment="Center" 
+                       Height="58.666" 
+                       Grid.Row="0" 
+                       Grid.RowSpan="2"
+                       VerticalAlignment="Top" 
+                       Width="15">
+                        <Rectangle.Stroke>
+                            <LinearGradientBrush EndPoint="2.133,1.146" StartPoint="-0.785,0.093">
+                                <GradientStop Color="Black" Offset="0.14"/>
+                                <GradientStop Color="#FF858282" Offset="0.856"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Stroke>
+                    </Rectangle>
+                </Grid>
+            </Viewbox>
+        </VisualBrush.Visual>
+    </VisualBrush>
 
 </ResourceDictionary>

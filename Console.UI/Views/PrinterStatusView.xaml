@@ -42,13 +42,20 @@
                         CornerRadius="2,2,0,0"
                         Margin="5,5,5,0"
                         Background="{StaticResource DarkGraySolidColorBrush}">
-                    <TextBlock Text="Print Preview"
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Canvas Background="{StaticResource PrintPreviewVisualBrush}"
+                                VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                                Height="45" 
+                                Width="40"/> 
+                        <TextBlock Text="Print Preview"
                                VerticalAlignment="Center"
                                HorizontalAlignment="Center"
                                FontSize="25"
                                FontWeight="Bold"
                                Foreground="{StaticResource HighlightSolidColorBrush}"
                                Margin="15"/>
+                    </StackPanel>
                 </Border>
                 <Border Grid.Row="1"
                         CornerRadius="0,0,2,2"
