@@ -4,57 +4,6 @@
         <ResourceDictionary Source="Brushes.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
-
-
-    <SolidColorBrush x:Key="StandardBorderBrush" Color="#888" />
-    <SolidColorBrush x:Key="StandardBackgroundBrush" Color="#FFF" />
-    <SolidColorBrush x:Key="HoverBorderBrush" Color="#DDD" />
-    <SolidColorBrush x:Key="SelectedBackgroundBrush" Color="Gray" />
-    <SolidColorBrush x:Key="SelectedForegroundBrush" Color="White" />
-    <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
-    <SolidColorBrush x:Key="NormalBrush" Color="#888" />
-    <SolidColorBrush x:Key="NormalBorderBrush" Color="#888" />
-    <SolidColorBrush x:Key="HorizontalNormalBrush" Color="#888" />
-    <SolidColorBrush x:Key="HorizontalNormalBorderBrush" Color="#888" />
-
-
-    <LinearGradientBrush x:Key="ListBoxBackgroundBrush"
-            StartPoint="0,0" EndPoint="1,0.001">
-        <GradientBrush.GradientStops>
-            <GradientStopCollection>
-                <GradientStop Color="White" Offset="0.0" />
-                <GradientStop Color="White" Offset="0.6" />
-                <GradientStop Color="#DDDDDD" Offset="1.2"/>
-            </GradientStopCollection>
-        </GradientBrush.GradientStops>
-    </LinearGradientBrush>
-
-
-    <LinearGradientBrush x:Key="StandardBrush"
-            StartPoint="0,0" EndPoint="0,1">
-        <GradientBrush.GradientStops>
-            <GradientStopCollection>
-                <GradientStop Color="#FFF" Offset="0.0"/>
-                <GradientStop Color="#CCC" Offset="1.0"/>
-            </GradientStopCollection>
-        </GradientBrush.GradientStops>
-    </LinearGradientBrush>
-
-    <SolidColorBrush x:Key="GlyphBrush" Color="#444" />
-
-    <LinearGradientBrush x:Key="PressedBrush"
-            StartPoint="0,0" EndPoint="0,1">
-        <GradientBrush.GradientStops>
-            <GradientStopCollection>
-                <GradientStop Color="#BBB" Offset="0.0"/>
-                <GradientStop Color="#EEE" Offset="0.1"/>
-                <GradientStop Color="#EEE" Offset="0.9"/>
-                <GradientStop Color="#FFF" Offset="1.0"/>
-            </GradientStopCollection>
-        </GradientBrush.GradientStops>
-    </LinearGradientBrush>
-
-
     <Style x:Key="ScrollBarLineButton" TargetType="{x:Type RepeatButton}">
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="OverridesDefaultStyle" Value="true"/>
@@ -126,8 +75,7 @@
         </Setter>
     </Style>
 
-    <ControlTemplate x:Key="VerticalScrollBar"
-                     TargetType="{x:Type ScrollBar}">
+    <ControlTemplate x:Key="VerticalScrollBar" TargetType="{x:Type ScrollBar}">
         <Grid >
             <Grid.RowDefinitions>
                 <RowDefinition MaxHeight="18"/>
@@ -137,7 +85,8 @@
             <Border Grid.RowSpan="3"
                     CornerRadius="2"
                     Background="#F0F0F0" />
-            <RepeatButton Grid.Row="0"
+            <RepeatButton x:Name="LineLeftButton"
+                          Grid.Row="0"
                           Style="{StaticResource ScrollBarLineButton}"
                           Height="18"
                           Command="ScrollBar.LineUpCommand"
@@ -160,14 +109,15 @@
                                   Command="ScrollBar.PageDownCommand" />
                 </Track.IncreaseRepeatButton>
             </Track>
-            <RepeatButton Grid.Row="2"
+            <RepeatButton x:Name="LineRightButton"
+                          Grid.Row="2"
                           Style="{StaticResource ScrollBarLineButton}"
                           Height="18"
                           Command="ScrollBar.LineDownCommand"
                           Content="M 0 0 L 4 4 L 8 0 Z"/>
         </Grid>
     </ControlTemplate>
-
+    
     <ControlTemplate x:Key="HorizontalScrollBar"
                      TargetType="{x:Type ScrollBar}">
         <Grid>
@@ -210,7 +160,7 @@
         </Grid>
     </ControlTemplate>
 
-    <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
+    <Style x:Key="CustomScrollBar" TargetType="{x:Type ScrollBar}">
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="OverridesDefaultStyle" Value="true"/>
         <Style.Triggers>
@@ -218,14 +168,12 @@
                 <Setter Property="Width" Value="Auto"/>
                 <Setter Property="Height" Value="18" />
                 <Setter Property="Template"
-
                         Value="{StaticResource HorizontalScrollBar}" />
             </Trigger>
             <Trigger Property="Orientation" Value="Vertical">
                 <Setter Property="Width" Value="18"/>
                 <Setter Property="Height" Value="Auto" />
                 <Setter Property="Template"
-
                         Value="{StaticResource VerticalScrollBar}" />
             </Trigger>
         </Style.Triggers>
@@ -234,6 +182,8 @@
 
     <Style x:Key="CustomScrollViewer" TargetType="{x:Type ScrollViewer}">
         <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ScrollViewer}">
@@ -251,21 +201,31 @@
 
                         <ScrollBar Grid.Row="0" 
                                    Grid.Column="1" 
+                                   Style="{StaticResource CustomScrollBar}"
                                    Name="PART_VerticalScrollBar"
                                    Value="{TemplateBinding VerticalOffset}"
                                    Maximum="{TemplateBinding ScrollableHeight}"
                                    ViewportSize="{TemplateBinding ViewportHeight}"
-                                   Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"/>
+                                   Visibility="Collapsed"/>
                         <ScrollBar Name="PART_HorizontalScrollBar"
                                    Orientation="Horizontal"
+                                   Style="{StaticResource CustomScrollBar}"
                                    Grid.Row="1"
                                    Grid.Column="1"
                                    Value="{TemplateBinding HorizontalOffset}"
                                    Maximum="{TemplateBinding ScrollableWidth}"
                                    ViewportSize="{TemplateBinding ViewportWidth}"
-                                   Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
+                                   Visibility="Collapsed"/>
 
                     </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ComputedHorizontalScrollBarVisibility" Value="Visible">
+                            <Setter Property="Visibility" Value="Visible" TargetName="PART_HorizontalScrollBar"/>
+                        </Trigger>
+                        <Trigger Property="ComputedVerticalScrollBarVisibility" Value="Visible">
+                            <Setter Property="Visibility" Value="Visible" TargetName="PART_VerticalScrollBar"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:Console.UI.Views"
              xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
              mc:Ignorable="d" 
-             d:DesignHeight="80" 
-             d:DesignWidth="50"
+             d:DesignHeight="100" 
+             d:DesignWidth="70"
              DataContext="{Binding JobQueueItem, Source={StaticResource Locator}}">
     <!--<Viewbox Stretch="Uniform">
             <Grid Height="60" Width="60">
@@ -101,7 +101,7 @@
 
             </Grid>
         </Viewbox>-->
-        <Viewbox  Height="80" Width="50">
+        <Viewbox  Height="100" Width="70">
             <Grid Height="150" Width="100">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="65*"/>

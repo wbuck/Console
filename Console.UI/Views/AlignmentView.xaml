@@ -8,5 +8,7 @@
              d:DesignHeight="300" 
              d:DesignWidth="300"
              DataContext="{Binding Alignment, Source={StaticResource Locator}}">
-    <Grid/>
+    <Grid>
+
+    </Grid>
 </UserControl>

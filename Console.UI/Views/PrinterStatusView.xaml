@@ -113,8 +113,7 @@
                         CornerRadius="2"
                         Margin="0,5,5,5"
                         Background="#FFC7C5C5">
-                    <ScrollViewer PanningMode="VerticalOnly" 
-                                  Style="{StaticResource CustomScrollViewer}">
+                    <ScrollViewer PanningMode="VerticalOnly" Style="{StaticResource CustomScrollViewer}">
                         <Grid ShowGridLines="False">
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
