@@ -6,11 +6,10 @@
              xmlns:local="clr-namespace:Console.UI.Views"
              xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
              mc:Ignorable="d" 
-             d:DesignHeight="60" 
-             d:DesignWidth="60"
+             d:DesignHeight="80" 
+             d:DesignWidth="50"
              DataContext="{Binding JobQueueItem, Source={StaticResource Locator}}">
-    <Grid>
-        <Viewbox Stretch="Uniform">
+    <!--<Viewbox Stretch="Uniform">
             <Grid Height="60" Width="60">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="18"/>
@@ -20,7 +19,9 @@
                     <ColumnDefinition Width="18"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <!-- Main arc -->
+                -->
+        <!-- Main arc -->
+        <!--
                 <ed:Arc ArcThickness="10" 
                         ArcThicknessUnit="Pixel"
                         Grid.Column="0"
@@ -33,7 +34,9 @@
                         StartAngle="0"
                         Panel.ZIndex="1"/>
                 
-                <!-- Small arc with pattern -->
+                -->
+        <!-- Small arc with pattern -->
+        <!--
                 <ed:Arc ArcThickness="11.5" 
                         ArcThicknessUnit="Pixel"
                         Grid.Column="0"
@@ -46,7 +49,9 @@
                         StartAngle="100"
                         Panel.ZIndex="2"/>
                 
-                <!-- Middle circle -->
+                -->
+        <!-- Middle circle -->
+        <!--
                 <Ellipse Panel.ZIndex="0" 
                          Grid.Column="0"
                          Grid.Row="0"
@@ -60,14 +65,18 @@
                          Stroke="LightGray" 
                          StrokeThickness="1.5"/>
                 
-                <!-- Small circle top left -->
+                -->
+        <!-- Small circle top left -->
+        <!--
                 <Ellipse Panel.ZIndex="3"
                          Grid.Row="0"
                          Grid.Column="0"
                          Fill="#FFDB6B41"
                          Stretch="Fill"/>
 
-                    <!-- Small textblock top left for status -->
+                    -->
+        <!-- Small textblock top left for status -->
+        <!--
                 <TextBlock Text="H"
                            Grid.Row="0"
                            Grid.Column="0"
@@ -76,7 +85,9 @@
                            Foreground="White"
                            Panel.ZIndex="4"/>
                 
-                <!-- Center textblock for eta display -->
+                -->
+        <!-- Center textblock for eta display -->
+        <!--
                 <TextBlock Text="00:00:00"
                            FontSize="8"
                            Grid.Row="0"
@@ -89,6 +100,62 @@
                            Panel.ZIndex="4"/>
 
             </Grid>
+        </Viewbox>-->
+        <Viewbox  Height="80" Width="50">
+            <Grid Height="150" Width="100">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="65*"/>
+                    <RowDefinition Height="42*"/>
+                    <RowDefinition Height="43*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="27*"/>
+                    <ColumnDefinition Width="23*"/>
+                </Grid.ColumnDefinitions>
+            <Path Grid.Column="1" 
+                      Data="M0.5,8.25 L26.75,25.5 37.625,42 1.25,43.875 z" 
+                      Fill="LimeGreen" 
+                      Grid.Row="0" 
+                      Stretch="Fill"
+                      Margin="0.5,8.25,8.375,21.125"/>
+            <Path Data="M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M15,18V16H6V18H15M18,14V12H6V14H18Z" 
+                      Fill="#FF3D3D3D"
+                      Stretch="Fill"
+                      Margin="5"
+                      Grid.Row="0"
+                      Grid.Column="0"
+                      Grid.ColumnSpan="2"
+                      Grid.RowSpan="2"/>
+                <Ellipse Grid.Row="1"
+                         Grid.Column="1"
+                         Stretch="Fill"
+                         Fill="DodgerBlue"
+                         Height="40"
+                         Width="40"
+                         VerticalAlignment="Center"
+                         HorizontalAlignment="Center"/>
+                <TextBlock Grid.Row="1"
+                           Grid.Column="1"
+                           Text="i"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Foreground="White"
+                           FontSize="28"
+                           FontWeight="Bold" 
+                           FontFamily="Sitka Display"
+                           Margin="0,3,0,0"/>
+                <Border Grid.Row="2"
+                        Grid.ColumnSpan="2" Grid.Column="0"
+                        Background="#FFC7C5C5"
+                        Margin="5"
+                        CornerRadius="2">
+                    <TextBlock Text="00:00:00" 
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Foreground="#FF3D3D3D"/>
+                </Border>
+            </Grid>
         </Viewbox>
-    </Grid>
 </UserControl>

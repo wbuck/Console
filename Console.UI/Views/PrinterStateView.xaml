@@ -8,7 +8,100 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <Viewbox>
+        <Viewbox Stretch="Uniform">
+            <Grid Height="60" Width="60">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="18"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="18"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+         <!--Main arc--> 
+        
+                <ed:Arc ArcThickness="10" 
+                        ArcThicknessUnit="Pixel"
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Grid.RowSpan="2"
+                        Grid.ColumnSpan="2"
+                        EndAngle="360" 
+                        Fill="#FF565656"                
+                        Stretch="Fill" 
+                        StartAngle="0"
+                        Panel.ZIndex="1"/>
+                
+                
+         <!--Small arc with pattern--> 
+        
+                <ed:Arc ArcThickness="11.5" 
+                        ArcThicknessUnit="Pixel"
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Grid.RowSpan="2"
+                        Grid.ColumnSpan="2"
+                        EndAngle="180" 
+                        Fill="{StaticResource GrayLineVisualBrush}" 
+                        Stretch="None" 
+                        StartAngle="100"
+                        Panel.ZIndex="2"/>
+                
+                
+         <!--Middle circle--> 
+        
+                <Ellipse Panel.ZIndex="0" 
+                         Grid.Column="0"
+                         Grid.Row="0"
+                         Grid.RowSpan="2"
+                         Grid.ColumnSpan="2"
+                         Fill="DodgerBlue" 
+                         VerticalAlignment="Center" 
+                         HorizontalAlignment="Center" 
+                         Height="40" 
+                         Width="40" 
+                         Stroke="LightGray" 
+                         StrokeThickness="1.5"/>
+                
+                
+         <!--Small circle top left--> 
+        
+                <Ellipse Panel.ZIndex="3"
+                         Grid.Row="0"
+                         Grid.Column="0"
+                         Fill="#FFDB6B41"
+                         Stretch="Fill"/>
+
+                    
+         <!--Small textblock top left for status--> 
+        
+                <TextBlock Text="H"
+                           Grid.Row="0"
+                           Grid.Column="0"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Foreground="White"
+                           Panel.ZIndex="4"/>
+                
+                
+         <!--Center textblock for eta display--> 
+        
+                <TextBlock Text="IDLE"
+                           FontSize="8"
+                           Grid.Row="0"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="2"
+                           Grid.RowSpan="2"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Foreground="#FF3FFF3F"
+                           FontWeight="Bold"
+                           Panel.ZIndex="4"/>
+
+            </Grid>
+        </Viewbox>
+        <!--<Viewbox>
             <Grid Height="300" Width="300">
                 <Ellipse Stretch="Fill" Fill="{StaticResource BlackLinearGradientBrush}"/>
                 <ed:Arc ArcThickness="20" 
@@ -43,6 +136,6 @@
                     StartAngle="180"/>
                 <TextBlock Text="IDLE" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" Foreground="LimeGreen"/>
             </Grid>
-        </Viewbox>
+        </Viewbox>-->
     </Grid>
 </UserControl>
