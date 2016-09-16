@@ -4,6 +4,8 @@
 
     <SolidColorBrush x:Key="DarkGraySolidColorBrush" Color="#FF3D3D3D"/>
 
+    <SolidColorBrush x:Key="LightGraySolidColorBrush" Color="#FFC7C5C5"/>
+
     <!-- Used for the job queue item -->
     <VisualBrush x:Key="GrayLineVisualBrush" 
                      TileMode="Tile" Viewport="0,0,5,5" 

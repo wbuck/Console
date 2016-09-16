@@ -21,8 +21,42 @@
             </TextBlock>
         </Border>
         <TabControl Grid.Row="1" ItemContainerStyle="{StaticResource CustomTabItem}" TabStripPlacement="Left">
-            <TabItem Header="Tab 1"/>
-            <TabItem Header="Tab 2"/>
+            <TabItem>
+                <TabItem.Header>
+                   <Grid>
+                        <Grid.Resources>
+                        </Grid.Resources>
+                       <Grid.ColumnDefinitions>
+                           <ColumnDefinition />
+                           <ColumnDefinition Width="2*"/>
+                       </Grid.ColumnDefinitions>
+                        <Viewbox Width="25" Height="25" Grid.Column="0" HorizontalAlignment="Left">
+                            <Canvas Width="24" Height="24">
+                                <Path Data="M4,4H7L9,2H15L17,4H20A2,2 0 0,1 22,6V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V6A2,2 0 0,1 4,4M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9Z" 
+                                      Fill="{StaticResource HighlightSolidColorBrush}"/>
+                            </Canvas>
+                        </Viewbox>
+                        <TextBlock Grid.Column="1" Foreground="{StaticResource HighlightSolidColorBrush}" Text="Alignment" VerticalAlignment="Center" FontWeight="Bold" Margin="5,0,0,0" />
+                    </Grid>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Viewbox Width="25" Height="25" Grid.Column="0" HorizontalAlignment="Left">
+                            <Canvas Width="24" Height="24">
+                                <Path Data="M7,4V6H10V8H7L5,10V13H3V10H1V18H3V15H5V18H8L10,20H18V16H20V19H23V9H20V12H18V8H12V6H15V4H7Z" 
+                                      Fill="{StaticResource HighlightSolidColorBrush}"/>
+                            </Canvas>
+                        </Viewbox>
+                        <TextBlock Grid.Column="1" Text="Engines" Foreground="{StaticResource HighlightSolidColorBrush}" VerticalAlignment="Center" FontWeight="Bold" Margin="5,0,0,0"/>
+                    </Grid>
+                </TabItem.Header>
+            </TabItem>
             <TabItem Header="Tab 3"/>
         </TabControl>  
     </Grid>
