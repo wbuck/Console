@@ -33,7 +33,7 @@
                             <Setter TargetName="ContentSite"
                                     Property="Effect">
                                 <Setter.Value>
-                                    <DropShadowEffect Color="DodgerBlue"
+                                    <DropShadowEffect Color="Orange"
                                                       BlurRadius="20" 
                                                       ShadowDepth="0" 
                                                       Opacity="1"/>
@@ -61,7 +61,7 @@
                                   Grid.RowSpan="2"
                                   Panel.ZIndex="1"
                                   Margin="0"
-                                  Background="{StaticResource D}"/>
+                                  Background="{StaticResource DarkGraySolidColorBrush}"/>
                         <Border Grid.Column="1"
                                 Grid.ColumnSpan="2"
                                 CornerRadius="0"

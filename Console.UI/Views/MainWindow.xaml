@@ -6,7 +6,7 @@
         xmlns:viewModels="clr-namespace:Console.UI.ViewModel"
         xmlns:views="clr-namespace:Console.UI.Views" x:Class="Console.UI.Views.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1024" Width="1280"
+        Title="MainWindow" Height="1024" Width="1580"
         DataContext="{Binding Main, Source={StaticResource Locator}}" WindowState="Maximized" WindowStyle="None">
     <Grid ShowGridLines="False">
         <Grid.ColumnDefinitions>
@@ -47,9 +47,9 @@
         <!--<ContentControl Grid.Row="2"/>-->
 
         <!-- Only here for testing purposes -->
-        <views:SettingsView Grid.Column="0" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-            </views:SettingsView>
-            <!--<views:PrinterStatusView Grid.Column="0" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="2"></views:PrinterStatusView>-->
+        <!--<views:SettingsView Grid.Column="0" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            </views:SettingsView>-->
+            <views:PrinterStatusView Grid.Column="0" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="2"></views:PrinterStatusView>
 
         <!-- Action bar, contains ink level view and controls view -->
         <Grid Grid.Row="4" Background="Black" Grid.ColumnSpan="2" Grid.Column="0"

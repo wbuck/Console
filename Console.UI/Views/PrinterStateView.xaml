@@ -6,9 +6,108 @@
              xmlns:local="clr-namespace:Console.UI.Views"
              xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="Console.UI.Views.PrinterStateView"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="350" d:DesignWidth="525">
     <Grid>
-        <Viewbox Stretch="Uniform">
+        <Viewbox>
+            <Grid Height="300" Width="300">
+                <Ellipse Fill="{StaticResource BlackLinearGradientBrush}"/>
+                <ed:Arc Height="300"
+                        Width="300"
+                        StartAngle="359"
+                        EndAngle="1"
+                        Stretch="None"
+                        ArcThickness="40"
+                        Fill="Aqua">
+                    <ed:Arc.Effect>
+                        <DropShadowEffect Color="Turquoise"
+                                      ShadowDepth="0"
+                                          BlurRadius="20"/>
+                    </ed:Arc.Effect>
+                    
+                </ed:Arc>
+                <ed:Arc Height="300"
+                        Width="300"
+                        StartAngle="44"
+                        EndAngle="46"
+                        Stretch="None"
+                        ArcThickness="40"
+                        Fill="Aqua">
+                    <ed:Arc.Effect>
+                        <DropShadowEffect Color="Turquoise"
+                                      ShadowDepth="0"
+                                          BlurRadius="20"/>
+                    </ed:Arc.Effect>
+
+                </ed:Arc>
+                <ed:Arc Height="300"
+                        Width="300"
+                        StartAngle="89"
+                        EndAngle="91"
+                        Stretch="None"
+                        ArcThickness="40"
+                        Fill="Aqua">
+                    <ed:Arc.Effect>
+                        <DropShadowEffect Color="Turquoise"
+                                      ShadowDepth="0"
+                                          BlurRadius="20"/>
+                    </ed:Arc.Effect>
+
+                </ed:Arc>
+                <ed:Arc Height="300"
+                        Width="300"
+                        StartAngle="269"
+                        EndAngle="271"
+                        Stretch="None"
+                        ArcThickness="40"
+                        Fill="Aqua">
+                    <ed:Arc.Effect>
+                        <DropShadowEffect Color="Turquoise"
+                                      ShadowDepth="0"
+                                          BlurRadius="20"/>
+                    </ed:Arc.Effect>
+
+                </ed:Arc>
+                <ed:Arc Height="300"
+                        Width="300"
+                        StartAngle="314"
+                        EndAngle="316"
+                        Stretch="None"
+                        ArcThickness="40"
+                        Fill="Aqua">
+                    <ed:Arc.Effect>
+                        <DropShadowEffect Color="Turquoise"
+                                      ShadowDepth="0"
+                                          BlurRadius="20"/>
+                    </ed:Arc.Effect>
+
+                </ed:Arc>
+                <TextBlock Text="IDLE" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="50" Foreground="Aqua">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="Turquoise"
+                                      ShadowDepth="0"
+                                          BlurRadius="20"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+                <!--<ed:Arc StrokeThickness="40"
+                        Height="300"
+                        Width="300"
+                        Stretch="None"
+                        Stroke="DodgerBlue" 
+                        StartAngle="-120"
+                        EndAngle="230"
+                        StrokeDashArray=".70"/>-->
+                <!--<ed:Arc StrokeThickness="40"
+                        Height="300"
+                        Width="300"
+                        Stretch="None"
+                        Stroke="LimeGreen" 
+                        StartAngle="0"
+                        EndAngle="360"
+                        StrokeDashArray=".35"/>-->
+            </Grid>
+        </Viewbox>
+
+        <!--<Viewbox Stretch="Uniform">
             <Grid Height="60" Width="60">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="18"/>
@@ -19,7 +118,9 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 
-         <!--Main arc--> 
+         -->
+        <!--Main arc-->
+        <!-- 
         
                 <ed:Arc ArcThickness="10" 
                         ArcThicknessUnit="Pixel"
@@ -34,7 +135,9 @@
                         Panel.ZIndex="1"/>
                 
                 
-         <!--Small arc with pattern--> 
+         -->
+        <!--Small arc with pattern-->
+        <!-- 
         
                 <ed:Arc ArcThickness="11.5" 
                         ArcThicknessUnit="Pixel"
@@ -49,7 +152,9 @@
                         Panel.ZIndex="2"/>
                 
                 
-         <!--Middle circle--> 
+         -->
+        <!--Middle circle-->
+        <!-- 
         
                 <Ellipse Panel.ZIndex="0" 
                          Grid.Column="0"
@@ -65,27 +170,29 @@
                          StrokeThickness="1.5"/>
                 
                 
-         <!--Small circle top left--> 
-        
-                <Ellipse Panel.ZIndex="3"
+         -->
+        <!--Small circle top left-->
+
+        <!--<Ellipse Panel.ZIndex="3"
                          Grid.Row="0"
                          Grid.Column="0"
                          Fill="#FFDB6B41"
-                         Stretch="Fill"/>
+                         Stretch="Fill"/>-->
 
-                    
-         <!--Small textblock top left for status--> 
-        
-                <TextBlock Text="H"
+
+        <!--Small textblock top left for status-->
+
+        <!--<TextBlock Text="H"
                            Grid.Row="0"
                            Grid.Column="0"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
                            Foreground="White"
-                           Panel.ZIndex="4"/>
-                
-                
-         <!--Center textblock for eta display--> 
+                           Panel.ZIndex="4"/>-->
+
+
+        <!--Center textblock for eta display-->
+        <!-- 
         
                 <TextBlock Text="IDLE"
                            FontSize="8"
@@ -100,7 +207,7 @@
                            Panel.ZIndex="4"/>
 
             </Grid>
-        </Viewbox>
+        </Viewbox>-->
         <!--<Viewbox>
             <Grid Height="300" Width="300">
                 <Ellipse Stretch="Fill" Fill="{StaticResource BlackLinearGradientBrush}"/>
