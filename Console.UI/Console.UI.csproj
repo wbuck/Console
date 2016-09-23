@@ -86,6 +86,7 @@
     <Compile Include="ViewModel\JobQueueItemViewModel.cs" />
     <Compile Include="ViewModel\JobQueueViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\PrinterStatusViewModel.cs" />
     <Compile Include="ViewModel\SettingsViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="Views\ControlPanelView.xaml.cs">

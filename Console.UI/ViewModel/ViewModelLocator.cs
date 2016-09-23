@@ -48,6 +48,7 @@ namespace Console.UI.ViewModel
             SimpleIoc.Default.Register<JobQueueViewModel>( );
             SimpleIoc.Default.Register<SettingsViewModel>( );
             SimpleIoc.Default.Register<JobQueueItemViewModel>( );
+            SimpleIoc.Default.Register<PrinterStatusViewModel>( );
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
@@ -59,6 +60,8 @@ namespace Console.UI.ViewModel
         public SettingsViewModel Settings => ServiceLocator.Current.GetInstance<SettingsViewModel>( );
 
         public JobQueueItemViewModel JobQueueItem => ServiceLocator.Current.GetInstance<JobQueueItemViewModel>( );
+
+        public PrinterStatusViewModel PrinterStatus => ServiceLocator.Current.GetInstance<PrinterStatusViewModel>( );
 
         public static void Cleanup()
         {

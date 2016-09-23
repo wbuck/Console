@@ -121,6 +121,10 @@
 
     <SolidColorBrush x:Key="HighlightSolidColorBrush" Color="#FF3EB4FF"/>
 
+    <SolidColorBrush x:Key="RedColorBrush" Color="#FFFA5151"/>
+
+    <SolidColorBrush x:Key="GreenColorBrush" Color="#FF37A03E"/>
+
     <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
 
     <LinearGradientBrush x:Key="RectangleLinearGradientBorderBrush" EndPoint="1.047,1.05" StartPoint="0,0">
@@ -316,6 +320,39 @@
                 <Canvas Width="24" Height="24">
                     <Path Data="M19,16V13H23V11H19V8L15,12L19,16M5,8V11H1V13H5V16L9,12L5,8M11,20H13V4H11V20Z" 
                           Fill="{StaticResource HighlightSolidColorBrush}" />
+                </Canvas>
+            </Viewbox>
+        </VisualBrush.Visual>
+    </VisualBrush>
+    
+    <VisualBrush x:Key="RecordVisualBrush">
+        <VisualBrush.Visual>
+            <Viewbox Width="48" Height="48">
+                <Canvas Width="24" Height="24">
+                    <Path Data="M17,10.5V7A1,1 0 0,0 16,6H4A1,1 0 0,0 3,7V17A1,1 0 0,0 4,18H16A1,1 0 0,0 17,17V13.5L21,17.5V6.5L17,10.5Z" 
+                          Fill="Black" />
+                </Canvas>
+            </Viewbox>
+        </VisualBrush.Visual>
+    </VisualBrush>
+
+    <VisualBrush x:Key="RecordStopVisualBrush">
+        <VisualBrush.Visual>
+            <Viewbox Width="48" Height="48">
+                <Canvas Width="24" Height="24">
+                    <Path Data="M3.27,2L2,3.27L4.73,6H4A1,1 0 0,0 3,7V17A1,1 0 0,0 4,18H16C16.2,18 16.39,17.92 16.54,17.82L19.73,21L21,19.73M21,6.5L17,10.5V7A1,1 0 0,0 16,6H9.82L21,17.18V6.5Z" 
+                          Fill="Black" />
+                </Canvas>
+            </Viewbox>
+        </VisualBrush.Visual>
+    </VisualBrush>
+    
+    <VisualBrush x:Key="AutoTriggerVisualBrush">
+        <VisualBrush.Visual>
+            <Viewbox Width="48" Height="48">
+                <Canvas Width="24" Height="24">
+                    <Path Data="M12,17C10.37,17 8.94,16.21 8,15H12A3,3 0 0,0 15,12C15,11.65 14.93,11.31 14.82,11H16.9C16.96,11.32 17,11.66 17,12A5,5 0 0,1 12,17M12,7C13.63,7 15.06,7.79 16,9H12A3,3 0 0,0 9,12C9,12.35 9.07,12.68 9.18,13H7.1C7.03,12.68 7,12.34 7,12A5,5 0 0,1 12,7M20,4H16.83L15,2H9L7.17,4H4A2,2 0 0,0 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" 
+                          Fill="Black" />
                 </Canvas>
             </Viewbox>
         </VisualBrush.Visual>

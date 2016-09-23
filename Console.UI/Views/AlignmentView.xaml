@@ -53,11 +53,25 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="50"/>
                             <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="5*"/>
+                            <RowDefinition Height="Auto"/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal"
+                                    Grid.Row="0"
+                                    Grid.Column="0">
+                        <ToggleButton Style="{StaticResource AutoTriggerToggleButton}"
+                                      Width="40"
+                                      Height="40"
+                                      HorizontalAlignment="Left"
+                                      Margin="5"/>
+                            <TextBlock Text="Auto Trigger"
+                                       VerticalAlignment="Center"
+                                       FontSize="16"
+                                       FontWeight="Bold"
+                                       Foreground="{StaticResource DarkGraySolidColorBrush}"/>
+                        </StackPanel>
+
                         <TextBlock Text="Lower Camera" 
                                    Grid.Row="1"
                                    Grid.Column="0"

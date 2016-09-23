@@ -39,17 +39,8 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
 
-    <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
-    <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
-    <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
-    <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
-    <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
-    <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
-    <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
-    <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
-    
+
     <Style x:Key="ControlPanelButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
         <Setter Property="Background" Value="{StaticResource BlackLinearGradientBrush}"/>
@@ -92,8 +83,8 @@
                             </Setter>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
-                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            <Setter Property="Background" TargetName="border" Value="Gray"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="Gray"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -101,6 +92,40 @@
         </Setter>
     </Style>
 
-
+    <Style x:Key="AutoTriggerToggleButton" TargetType="{x:Type ToggleButton}">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Grid Background="Transparent">
+                        <Ellipse Name="EllipseButton"
+                                 Height="{TemplateBinding Height}" 
+                                 Width="{TemplateBinding Width}" 
+                                 Fill="{StaticResource GreenColorBrush}">
+                            <Ellipse.Effect>
+                                <DropShadowEffect Direction="275"
+                                                  ShadowDepth="1"
+                                                  BlurRadius="3"/>
+                            </Ellipse.Effect>
+                        </Ellipse>
+                        <Canvas x:Name="ContentSite"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                Height="20"
+                                Width="20"
+                                Background="{StaticResource AutoTriggerVisualBrush}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="EllipseButton" 
+                                    Property="Fill" 
+                                    Value="{StaticResource RedColorBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
 </ResourceDictionary>

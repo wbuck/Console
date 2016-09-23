@@ -18,16 +18,15 @@ namespace Console.UI.Converters
 
             if( brush != null )
                 return brush.Color;
-            
-            throw new InvalidOperationException( "Unsupported type [" + value.GetType( ).Name +
-                                                 "], BrushToColorConverter.Convert()" );
+
+            throw new InvalidOperationException(
+                $"Unsupported type [{value.GetType( ).Name}], BrushToColorConverter.Convert()" );
         }
 
 
         public object ConvertBack( object value, Type targetType, object parameter, CultureInfo culture )
         {
-            throw new InvalidOperationException( "Unsupported type [" + value.GetType( ).Name +
-                                                 "], ConvertBack.Convert()" );
+            throw new NotImplementedException( );
         }
     }
 }
