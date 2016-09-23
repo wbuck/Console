@@ -297,5 +297,28 @@
             </Viewbox>
         </VisualBrush.Visual>
     </VisualBrush>
+    
+    <VisualBrush x:Key="CameraVisualBrush">
+        <VisualBrush.Visual>
+            <Viewbox Width="48" Height="48">
+                <Canvas Width="24" Height="24">
+                    <Ellipse Fill="White" Height="15" Width="15" Canvas.Left="4.506" Canvas.Top="4.942"/>
+                    <Path Data="M4,4H7L9,2H15L17,4H20A2,2 0 0,1 22,6V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V6A2,2 0 0,1 4,4M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9Z" 
+                          Fill="{StaticResource HighlightSolidColorBrush}" />
+                </Canvas>
+            </Viewbox>
+        </VisualBrush.Visual>
+    </VisualBrush>
+    
+    <VisualBrush x:Key="AlignmentVisualBrush">
+        <VisualBrush.Visual>
+            <Viewbox Width="48" Height="48">
+                <Canvas Width="24" Height="24">
+                    <Path Data="M19,16V13H23V11H19V8L15,12L19,16M5,8V11H1V13H5V16L9,12L5,8M11,20H13V4H11V20Z" 
+                          Fill="{StaticResource HighlightSolidColorBrush}" />
+                </Canvas>
+            </Viewbox>
+        </VisualBrush.Visual>
+    </VisualBrush>
 
 </ResourceDictionary>

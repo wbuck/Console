@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Console.UI.Views"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:behaviors="clr-namespace:Console.UI.Behaviors"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1500">
     <Grid Background="Black"
@@ -45,7 +47,7 @@
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Canvas Background="{StaticResource PrintPreviewVisualBrush}"
                                 VerticalAlignment="Center"
-                               HorizontalAlignment="Center"
+                                HorizontalAlignment="Center"
                                 Height="45" 
                                 Width="40"/> 
                         <TextBlock Text="Print Preview"
@@ -61,7 +63,13 @@
                         CornerRadius="0,0,2,2"
                         Margin="5,0,5,5"
                         Background="{StaticResource LightGraySolidColorBrush}">
-                
+                    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled">
+                        <Image>
+                            <i:Interaction.Behaviors>
+                                <behaviors:MultitouchTransformBehavior Duration="0:0:0.6" MinimumScale="1" AllowRotate="False" />
+                            </i:Interaction.Behaviors>
+                        </Image>
+                    </ScrollViewer>
                 </Border>
             </Grid>
         </Border>

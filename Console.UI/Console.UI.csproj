@@ -76,6 +76,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Behaviors\LinearMatrixAnimation.cs" />
+    <Compile Include="Behaviors\MultitouchTransformation.cs" />
+    <Compile Include="Behaviors\MultitouchTransformBehavior.cs" />
+    <Compile Include="Behaviors\Utilities.cs" />
     <Compile Include="Converters\BrushToColorConverter.cs" />
     <Compile Include="Messages\JobTicket.cs" />
     <Compile Include="ViewModel\AlignmentViewModel.cs" />

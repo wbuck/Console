@@ -5,10 +5,128 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Console.UI.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="300" 
-             d:DesignWidth="300"
+             d:DesignHeight="600" 
+             d:DesignWidth="1280"
              DataContext="{Binding Alignment, Source={StaticResource Locator}}">
-    <Grid>
+    <Grid Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0"   
+                BorderThickness="0.8" 
+                BorderBrush="{StaticResource HighlightSolidColorBrush}"
+                CornerRadius="2" 
+                Margin="5"
+                Background="White">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0"
+                        Background="{StaticResource DarkGraySolidColorBrush}"
+                        Margin="5,5,5,0"
+                        CornerRadius="2,2,0,0">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Canvas Background="{StaticResource CameraVisualBrush}"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                Height="45" 
+                                Width="50"/>
+                        <TextBlock Text="Images"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               FontSize="25"
+                               FontWeight="Bold"
+                               Foreground="{StaticResource HighlightSolidColorBrush}"
+                               Margin="15"/>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="1"
+                        Background="{StaticResource LightGraySolidColorBrush}"
+                        Margin="5,0,5,5"
+                        CornerRadius="0,0,2,2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="5*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Lower Camera" 
+                                   Grid.Row="1"
+                                   Grid.Column="0"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center"/>
+                        <TextBlock Text="Upper Camera" 
+                                   Grid.Row="1"
+                                   Grid.Column="1"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center"/>
+                        <Border Grid.Column="0"
+                                Grid.Row="2"
+                                Background="Black"
+                                Margin="5"
+                                CornerRadius="2"
+                                BorderBrush="{StaticResource HighlightSolidColorBrush}"
+                                BorderThickness="0.8"></Border>
+                        <Border Grid.Column="1"
+                                Grid.Row="2"
+                                Background="Black"
+                                Margin="5"
+                                CornerRadius="2"
+                                BorderBrush="{StaticResource HighlightSolidColorBrush}"
+                                BorderThickness="0.8"></Border>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+        <Border Grid.Column="1"   
+                BorderThickness="0.8" 
+                BorderBrush="{StaticResource HighlightSolidColorBrush}"
+                CornerRadius="2" 
+                Margin="5"
+                Background="White">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0"
+                        Background="{StaticResource DarkGraySolidColorBrush}"
+                        Margin="5,5,5,0"
+                        CornerRadius="2,2,0,0">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Canvas Background="{StaticResource AlignmentVisualBrush}"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                Height="45" 
+                                Width="50"/>
+                        <TextBlock Text="Alignment"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   FontSize="25"
+                                   FontWeight="Bold"
+                                   Foreground="{StaticResource HighlightSolidColorBrush}"
+                                   Margin="15"/>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="1"
+                        Background="{StaticResource LightGraySolidColorBrush}"
+                        Margin="5,0,5,5"
+                        CornerRadius="0,0,2,2">
 
+                </Border>
+            </Grid>
+        </Border>
     </Grid>
 </UserControl>
