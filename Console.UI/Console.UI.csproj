@@ -76,6 +76,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AttachedProperties\TabItemAttached.cs" />
     <Compile Include="Behaviors\LinearMatrixAnimation.cs" />
     <Compile Include="Behaviors\MultitouchTransformation.cs" />
     <Compile Include="Behaviors\MultitouchTransformBehavior.cs" />
