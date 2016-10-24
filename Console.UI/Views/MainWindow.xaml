@@ -25,8 +25,8 @@
 
         <Grid Grid.Row="0" Background="Black" Grid.ColumnSpan="2" Grid.Column="0">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <views:JobQueueView Grid.Column="0"/>
         </Grid>

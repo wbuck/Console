@@ -17,6 +17,16 @@
             <local:JobQueueItemView/>
             <local:JobQueueItemView/>
             <local:JobQueueItemView/>
+            <local:JobQueueItemView/>
+            <local:JobQueueItemView/>
+            <local:JobQueueItemView/>
+            <local:JobQueueItemView/>
+            <local:JobQueueItemView/>
+            <local:JobQueueItemView/>
+            <local:JobQueueItemView/>
+            <local:JobQueueItemView/>
+            <local:JobQueueItemView/>
+            <local:JobQueueItemView/>
 
 
         </ListBox>

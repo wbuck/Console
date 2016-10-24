@@ -3,7 +3,7 @@
                     xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing">
 
     <SolidColorBrush x:Key="DarkGraySolidColorBrush" Color="#FF3D3D3D"/>
-
+    <SolidColorBrush x:Key="DarkSolidColorBrush" Color="#292929"/>
     <SolidColorBrush x:Key="LightGraySolidColorBrush" Color="#FFC7C5C5"/>
 
     <!-- Used for the job queue item -->
